@@ -2,15 +2,15 @@
 
 ##########################################################
 # This script will download the split gap minder zip file,
-# unzip it, 
+# unzip it, and archive the data 
 ##########################################################
 
 
 echo Creating project directory structure
-sleep 2
-mkdir -v data code output data/archive
+sleep 2  											# pause for 2 seconds
+mkdir -v data code output data/archive				# -v = verbose.... or tell as about it, making four directories with archive directory within data directory
 
-cd data
+cd data												# change to the data directory that was just created
 
 # Fetch the zip file
 ZIP_FILE_URL="http://npk.io/1jHRK+"
@@ -26,7 +26,7 @@ unzip $ZIP_FILE_NAME
 
 echo Copying the zip file contents to the archive directory
 sleep 2
-cp -vr clean archive/
+cp -vr clean archive/							# verbose and recursive for all of the files
 
 # Move back up a dir
 cd ../
